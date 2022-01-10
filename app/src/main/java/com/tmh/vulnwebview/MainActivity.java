@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putString("username", "vuln");
-        editor.putString("password", "webview");
+        editor.putString("username", "TestApp");
+        editor.putString("password", "Sidd@123");
         editor.apply();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
