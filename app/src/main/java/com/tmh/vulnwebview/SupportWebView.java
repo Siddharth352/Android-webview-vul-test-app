@@ -1,6 +1,8 @@
 package com.tmh.vulnwebview;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -33,7 +35,15 @@ public class SupportWebView extends AppCompatActivity {
 
         webView.addJavascriptInterface(new WebAppInterface(this), "Android"); //Expose getUserToken java method to browser JS
 
-        webView.loadUrl(getIntent().getStringExtra("support_url"), extraHeaders); //Launching web view
+        Uri uri = getIntent().getData();
+        String data = null;
+        if(uri != null){
+
+            data = uri.getQueryParameter("url");
+
+        }
+
+        webView.loadUrl(data, extraHeaders); //Launching web view
     }
 
     public static String getUserToken() {

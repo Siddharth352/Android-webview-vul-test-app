@@ -15,15 +15,25 @@
             android:name=".HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.VulnWebView.NoActionBar" />
-        <activity android:name=".SupportWebView" android:exported="true" />
+
+        <activity android:name=".SupportWebView" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                 <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="siddharth"  android:host="com.sid"/>
+            </intent-filter>
+        </activity>
+
+<!--        <activity android:name=".SupportWebView" android:exported="true" />-->
         <activity android:name=".RegistrationWebView" android:exported="true" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
