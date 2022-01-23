@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -59,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         String uname = sharedPref.getString("username", "");
         String pass = sharedPref.getString("password", "");
-
+        String TAG = "MyActivity";
+        Log.i(TAG, "username and password "+username+" "+password);
         if (username.equals(uname) && password.equals(pass)) {
             startActivity(new Intent(this, HomeActivity.class));
         }
