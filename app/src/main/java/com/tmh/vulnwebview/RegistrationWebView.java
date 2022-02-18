@@ -35,7 +35,7 @@ public class RegistrationWebView extends AppCompatActivity  {
     private void loadWebView() {
 
         WebView webView = findViewById(R.id.webview);
-        webView.setWebViewClient(new CustomWebviewclient(context));
+        webView.setWebViewClient(new SSLhandlerWebViewClient());
 //        webView.setWebChromeClient(new WebChromeClient() {
 //            @Override
 //            public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
